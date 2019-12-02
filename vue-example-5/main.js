@@ -3,13 +3,15 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import Axios from 'axios'
-import Vuex from 'vuex';
-Vue.config.productionTip = false
-Vue.prototype.$ajax = Axios
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
+Vue.prototype.$axios = axios;
+
+//Vue.use(axios, VueAxios)
+//Vue.config.productionTip = false
 
 /* eslint-disable no-new */
-Vue.use(Vuex);
 new Vue({
   el: '#app',
   router,

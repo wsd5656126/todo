@@ -244,63 +244,123 @@ public class ItemExample {
             return (Criteria) this;
         }
 
-        public Criteria andUnreadIsNull() {
-            addCriterion("unread is null");
+        public Criteria andUnitNumIsNull() {
+            addCriterion("unit_num is null");
             return (Criteria) this;
         }
 
-        public Criteria andUnreadIsNotNull() {
-            addCriterion("unread is not null");
+        public Criteria andUnitNumIsNotNull() {
+            addCriterion("unit_num is not null");
             return (Criteria) this;
         }
 
-        public Criteria andUnreadEqualTo(Integer value) {
-            addCriterion("unread =", value, "unread");
+        public Criteria andUnitNumEqualTo(Integer value) {
+            addCriterion("unit_num =", value, "unitNum");
             return (Criteria) this;
         }
 
-        public Criteria andUnreadNotEqualTo(Integer value) {
-            addCriterion("unread <>", value, "unread");
+        public Criteria andUnitNumNotEqualTo(Integer value) {
+            addCriterion("unit_num <>", value, "unitNum");
             return (Criteria) this;
         }
 
-        public Criteria andUnreadGreaterThan(Integer value) {
-            addCriterion("unread >", value, "unread");
+        public Criteria andUnitNumGreaterThan(Integer value) {
+            addCriterion("unit_num >", value, "unitNum");
             return (Criteria) this;
         }
 
-        public Criteria andUnreadGreaterThanOrEqualTo(Integer value) {
-            addCriterion("unread >=", value, "unread");
+        public Criteria andUnitNumGreaterThanOrEqualTo(Integer value) {
+            addCriterion("unit_num >=", value, "unitNum");
             return (Criteria) this;
         }
 
-        public Criteria andUnreadLessThan(Integer value) {
-            addCriterion("unread <", value, "unread");
+        public Criteria andUnitNumLessThan(Integer value) {
+            addCriterion("unit_num <", value, "unitNum");
             return (Criteria) this;
         }
 
-        public Criteria andUnreadLessThanOrEqualTo(Integer value) {
-            addCriterion("unread <=", value, "unread");
+        public Criteria andUnitNumLessThanOrEqualTo(Integer value) {
+            addCriterion("unit_num <=", value, "unitNum");
             return (Criteria) this;
         }
 
-        public Criteria andUnreadIn(List<Integer> values) {
-            addCriterion("unread in", values, "unread");
+        public Criteria andUnitNumIn(List<Integer> values) {
+            addCriterion("unit_num in", values, "unitNum");
             return (Criteria) this;
         }
 
-        public Criteria andUnreadNotIn(List<Integer> values) {
-            addCriterion("unread not in", values, "unread");
+        public Criteria andUnitNumNotIn(List<Integer> values) {
+            addCriterion("unit_num not in", values, "unitNum");
             return (Criteria) this;
         }
 
-        public Criteria andUnreadBetween(Integer value1, Integer value2) {
-            addCriterion("unread between", value1, value2, "unread");
+        public Criteria andUnitNumBetween(Integer value1, Integer value2) {
+            addCriterion("unit_num between", value1, value2, "unitNum");
             return (Criteria) this;
         }
 
-        public Criteria andUnreadNotBetween(Integer value1, Integer value2) {
-            addCriterion("unread not between", value1, value2, "unread");
+        public Criteria andUnitNumNotBetween(Integer value1, Integer value2) {
+            addCriterion("unit_num not between", value1, value2, "unitNum");
+            return (Criteria) this;
+        }
+
+        public Criteria andLockedIsNull() {
+            addCriterion("locked is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andLockedIsNotNull() {
+            addCriterion("locked is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andLockedEqualTo(Integer value) {
+            addCriterion("locked =", value, "locked");
+            return (Criteria) this;
+        }
+
+        public Criteria andLockedNotEqualTo(Integer value) {
+            addCriterion("locked <>", value, "locked");
+            return (Criteria) this;
+        }
+
+        public Criteria andLockedGreaterThan(Integer value) {
+            addCriterion("locked >", value, "locked");
+            return (Criteria) this;
+        }
+
+        public Criteria andLockedGreaterThanOrEqualTo(Integer value) {
+            addCriterion("locked >=", value, "locked");
+            return (Criteria) this;
+        }
+
+        public Criteria andLockedLessThan(Integer value) {
+            addCriterion("locked <", value, "locked");
+            return (Criteria) this;
+        }
+
+        public Criteria andLockedLessThanOrEqualTo(Integer value) {
+            addCriterion("locked <=", value, "locked");
+            return (Criteria) this;
+        }
+
+        public Criteria andLockedIn(List<Integer> values) {
+            addCriterion("locked in", values, "locked");
+            return (Criteria) this;
+        }
+
+        public Criteria andLockedNotIn(List<Integer> values) {
+            addCriterion("locked not in", values, "locked");
+            return (Criteria) this;
+        }
+
+        public Criteria andLockedBetween(Integer value1, Integer value2) {
+            addCriterion("locked between", value1, value2, "locked");
+            return (Criteria) this;
+        }
+
+        public Criteria andLockedNotBetween(Integer value1, Integer value2) {
+            addCriterion("locked not between", value1, value2, "locked");
             return (Criteria) this;
         }
 

@@ -5,7 +5,9 @@ public class Item {
 
     private String itemName;
 
-    private Integer unread;
+    private Integer unitNum;
+
+    private Integer locked;
 
     private Long createTime;
 
@@ -25,12 +27,20 @@ public class Item {
         this.itemName = itemName == null ? null : itemName.trim();
     }
 
-    public Integer getUnread() {
-        return unread;
+    public Integer getUnitNum() {
+        return unitNum;
     }
 
-    public void setUnread(Integer unread) {
-        this.unread = unread;
+    public void setUnitNum(Integer unitNum) {
+        this.unitNum = unitNum;
+    }
+
+    public Integer getLocked() {
+        return locked;
+    }
+
+    public void setLocked(Integer locked) {
+        this.locked = locked;
     }
 
     public Long getCreateTime() {

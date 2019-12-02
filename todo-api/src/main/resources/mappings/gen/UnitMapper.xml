@@ -6,6 +6,7 @@
     <result column="item_id" property="itemId" jdbcType="VARCHAR" />
     <result column="unit_name" property="unitName" jdbcType="VARCHAR" />
     <result column="unit_content" property="unitContent" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="INTEGER" />
     <result column="create_time" property="createTime" jdbcType="BIGINT" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -67,7 +68,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    unit_id, item_id, unit_name, unit_content, create_time
+    unit_id, item_id, unit_name, unit_content, status, create_time
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.wusd.todoapi.entity.gen.UnitExample" >
     select
@@ -101,9 +102,11 @@
   </delete>
   <insert id="insert" parameterType="com.wusd.todoapi.entity.gen.Unit" >
     insert into unit (unit_id, item_id, unit_name, 
-      unit_content, create_time)
+      unit_content, status, create_time
+      )
     values (#{unitId,jdbcType=VARCHAR}, #{itemId,jdbcType=VARCHAR}, #{unitName,jdbcType=VARCHAR}, 
-      #{unitContent,jdbcType=VARCHAR}, #{createTime,jdbcType=BIGINT})
+      #{unitContent,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{createTime,jdbcType=BIGINT}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.wusd.todoapi.entity.gen.Unit" >
     insert into unit
@@ -119,6 +122,9 @@
       </if>
       <if test="unitContent != null" >
         unit_content,
+      </if>
+      <if test="status != null" >
+        status,
       </if>
       <if test="createTime != null" >
         create_time,
@@ -136,6 +142,9 @@
       </if>
       <if test="unitContent != null" >
         #{unitContent,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
       </if>
       <if test="createTime != null" >
         #{createTime,jdbcType=BIGINT},
@@ -163,6 +172,9 @@
       <if test="record.unitContent != null" >
         unit_content = #{record.unitContent,jdbcType=VARCHAR},
       </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=INTEGER},
+      </if>
       <if test="record.createTime != null" >
         create_time = #{record.createTime,jdbcType=BIGINT},
       </if>
@@ -177,6 +189,7 @@
       item_id = #{record.itemId,jdbcType=VARCHAR},
       unit_name = #{record.unitName,jdbcType=VARCHAR},
       unit_content = #{record.unitContent,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=INTEGER},
       create_time = #{record.createTime,jdbcType=BIGINT}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -194,6 +207,9 @@
       <if test="unitContent != null" >
         unit_content = #{unitContent,jdbcType=VARCHAR},
       </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=BIGINT},
       </if>
@@ -205,6 +221,7 @@
     set item_id = #{itemId,jdbcType=VARCHAR},
       unit_name = #{unitName,jdbcType=VARCHAR},
       unit_content = #{unitContent,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=BIGINT}
     where unit_id = #{unitId,jdbcType=VARCHAR}
   </update>

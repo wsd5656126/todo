@@ -9,6 +9,8 @@ public class Unit {
 
     private String unitContent;
 
+    private Integer status;
+
     private Long createTime;
 
     public String getUnitId() {
@@ -41,6 +43,14 @@ public class Unit {
 
     public void setUnitContent(String unitContent) {
         this.unitContent = unitContent == null ? null : unitContent.trim();
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
     public Long getCreateTime() {

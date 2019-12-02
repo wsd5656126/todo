@@ -4,7 +4,8 @@
   <resultMap id="BaseResultMap" type="com.wusd.todoapi.entity.gen.Item" >
     <id column="item_id" property="itemId" jdbcType="VARCHAR" />
     <result column="item_name" property="itemName" jdbcType="VARCHAR" />
-    <result column="unread" property="unread" jdbcType="INTEGER" />
+    <result column="unit_num" property="unitNum" jdbcType="INTEGER" />
+    <result column="locked" property="locked" jdbcType="INTEGER" />
     <result column="create_time" property="createTime" jdbcType="BIGINT" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -66,7 +67,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    item_id, item_name, unread, create_time
+    item_id, item_name, unit_num, locked, create_time
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.wusd.todoapi.entity.gen.ItemExample" >
     select
@@ -99,10 +100,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.wusd.todoapi.entity.gen.Item" >
-    insert into item (item_id, item_name, unread, 
-      create_time)
-    values (#{itemId,jdbcType=VARCHAR}, #{itemName,jdbcType=VARCHAR}, #{unread,jdbcType=INTEGER}, 
-      #{createTime,jdbcType=BIGINT})
+    insert into item (item_id, item_name, unit_num, 
+      locked, create_time)
+    values (#{itemId,jdbcType=VARCHAR}, #{itemName,jdbcType=VARCHAR}, #{unitNum,jdbcType=INTEGER}, 
+      #{locked,jdbcType=INTEGER}, #{createTime,jdbcType=BIGINT})
   </insert>
   <insert id="insertSelective" parameterType="com.wusd.todoapi.entity.gen.Item" >
     insert into item
@@ -113,8 +114,11 @@
       <if test="itemName != null" >
         item_name,
       </if>
-      <if test="unread != null" >
-        unread,
+      <if test="unitNum != null" >
+        unit_num,
+      </if>
+      <if test="locked != null" >
+        locked,
       </if>
       <if test="createTime != null" >
         create_time,
@@ -127,8 +131,11 @@
       <if test="itemName != null" >
         #{itemName,jdbcType=VARCHAR},
       </if>
-      <if test="unread != null" >
-        #{unread,jdbcType=INTEGER},
+      <if test="unitNum != null" >
+        #{unitNum,jdbcType=INTEGER},
+      </if>
+      <if test="locked != null" >
+        #{locked,jdbcType=INTEGER},
       </if>
       <if test="createTime != null" >
         #{createTime,jdbcType=BIGINT},
@@ -150,8 +157,11 @@
       <if test="record.itemName != null" >
         item_name = #{record.itemName,jdbcType=VARCHAR},
       </if>
-      <if test="record.unread != null" >
-        unread = #{record.unread,jdbcType=INTEGER},
+      <if test="record.unitNum != null" >
+        unit_num = #{record.unitNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.locked != null" >
+        locked = #{record.locked,jdbcType=INTEGER},
       </if>
       <if test="record.createTime != null" >
         create_time = #{record.createTime,jdbcType=BIGINT},
@@ -165,7 +175,8 @@
     update item
     set item_id = #{record.itemId,jdbcType=VARCHAR},
       item_name = #{record.itemName,jdbcType=VARCHAR},
-      unread = #{record.unread,jdbcType=INTEGER},
+      unit_num = #{record.unitNum,jdbcType=INTEGER},
+      locked = #{record.locked,jdbcType=INTEGER},
       create_time = #{record.createTime,jdbcType=BIGINT}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -177,8 +188,11 @@
       <if test="itemName != null" >
         item_name = #{itemName,jdbcType=VARCHAR},
       </if>
-      <if test="unread != null" >
-        unread = #{unread,jdbcType=INTEGER},
+      <if test="unitNum != null" >
+        unit_num = #{unitNum,jdbcType=INTEGER},
+      </if>
+      <if test="locked != null" >
+        locked = #{locked,jdbcType=INTEGER},
       </if>
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=BIGINT},
@@ -189,7 +203,8 @@
   <update id="updateByPrimaryKey" parameterType="com.wusd.todoapi.entity.gen.Item" >
     update item
     set item_name = #{itemName,jdbcType=VARCHAR},
-      unread = #{unread,jdbcType=INTEGER},
+      unit_num = #{unitNum,jdbcType=INTEGER},
+      locked = #{locked,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=BIGINT}
     where item_id = #{itemId,jdbcType=VARCHAR}
   </update>

@@ -14,13 +14,13 @@ public class DataTest extends TodoApiApplicationTests {
     @Autowired
     private UnitMapper unitMapper;
 
-    @Test
+//    @Test
     public void addData() {
         for (int i = 0; i < 5; i++) {
             Item item = new Item();
             item.setItemId(UUID.randomUUID().toString());
             item.setItemName("事项名称" + i);
-            item.setUnread(0);
+//            item.setUnread(0);
             item.setCreateTime(System.currentTimeMillis());
             itemMapper.insertSelective(item);
             for (int j = 0; j < 5; j++) {
