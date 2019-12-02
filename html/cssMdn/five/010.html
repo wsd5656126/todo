@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        html {
+            font-family: sans-serif;
+        }
+
+        body {
+            width: 70%;
+            max-width: 960px;
+            margin: 20px auto;
+        }
+
+        button {
+            font-size: 18px;
+            line-height: 1.5;
+            width: 15%;
+        }
+
+        div {
+            height: 100px;
+            border: 1px solid black;
+        }
+
+        div {
+            display: flex;
+            /*控制flex项在y轴上的位置 默认是stretch*/
+            align-items: center;
+            /*用空格填充*/
+            /*justify-content: space-around;*/
+            /*justify-content: center;*/
+            justify-content: space-between;
+        }
+
+        button:first-child {
+            align-self: flex-start;
+            /*所有flex项默认的order值是0 根据order值进行排序*/
+            order: 1;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <button>Smile</button>
+    <button>Laugh</button>
+    <button>Wink</button>
+    <button>Shrug</button>
+    <button>Blush</button>
+</div>
+</body>
+</html>
