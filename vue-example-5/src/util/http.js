@@ -1,4 +1,6 @@
 import Axios from 'axios'
+import QS from 'qs'
+import {Toast} from 'vant'
 import store from '@/store/index'
 import router from 'vue-router'
 
@@ -61,3 +63,31 @@ Axios.interceptors.response.use(
     }
   }
 )
+
+/**
+ * get方法，对应get请求
+ * @param {String} url [请求的url地址]
+ * @param {Object} params [请求时携带的参数]
+ */
+export function get(url, params) {
+  return new Promise(((resolve, reject) => {
+    Axios.get(url, {
+      params: params
+    }).then(res => {
+      resolve(res.data);
+    }).catch(err => {
+      reject(err.data)
+    })
+  }));
+}
+
+export function post(url, params) {
+  return new Promise(((resolve, reject) => {
+    Axios.post(url, QS.stringify(params))
+      .then(res => {
+        reslove(res.data);
+      }).catch(err => {
+        reject(err.data)
+    })
+  }));
+}
