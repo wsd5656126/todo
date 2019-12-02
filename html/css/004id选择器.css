@@ -1,0 +1,23 @@
+/*id选择器*/
+#red {
+    color: red;
+}
+#green {
+    color: green;
+}
+
+/*id选择器，派生选择器*/
+#sidebar p {
+    font-style: italic;
+    text-align: right;
+    /*边缘*/
+    margin-top: 0.5em;
+}
+#sidebar h2 {
+    font-size: 1em;
+    font-weight: normal;
+    font-style: italic;
+    margin: 0;
+    line-height: 1.5;
+    text-align: right;
+}

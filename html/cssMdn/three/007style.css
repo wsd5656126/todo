@@ -1,0 +1,18 @@
+table {
+    background: #005500;
+    /*border-spacing: 0px;*/
+    /*border-collapse: collapse;*/
+    /*border-spacing: 2px;*/
+}
+.one {
+    border-spacing: .5em;
+}
+.two {
+    border-spacing: 0;
+}
+.third {
+    border-collapse: collapse;
+}
+td {
+    border: 1px solid red;
+}

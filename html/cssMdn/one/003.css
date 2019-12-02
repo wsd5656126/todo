@@ -1,0 +1,68 @@
+/*外部样式表*/
+/*内部样式表*/
+/*内联样式,尽量不用*/
+p {
+    /*color: red;*/
+}
+
+/*选择器*/
+/*h1*/
+/*a: link*/
+/*.manythings*/
+/*#onething*/
+/***/
+/*.box p*/
+/*.box p:first-child*/
+/*h1, h2, .intro*/
+/*h1 {*/
+    /*color: yellow;*/
+/*}*/
+
+/*a:link {*/
+   /*text-decoration: line-through;*/
+/*}*/
+/*a:visited {*/
+    /*text-decoration: overline;*/
+/*}*/
+
+/*.manythings {*/
+    /*background-color: black;*/
+/*}*/
+
+/** {*/
+    /*background-color: gold;*/
+/*}*/
+
+/*.box p {*/
+    /*color: white;*/
+/*}*/
+
+/*.box p:first-child {*/
+    /*color: red;*/
+/*}*/
+
+/*h1, h2, .intro {*/
+    /*color: white;*/
+/*}*/
+
+/*p {*/
+    /*color: blue;*/
+/*}*/
+
+/*.special {*/
+    /*color: red;*/
+/*}*/
+
+/*优先选择下面的*/
+/*p {*/
+    /*color: red;*/
+/*}*/
+
+p {
+    color: blue;
+}
+
+.special {
+    color: red;
+}
+

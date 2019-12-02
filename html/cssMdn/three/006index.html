@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        /*ul, #numbered {*/
+            /*float: left;*/
+            /*border: 1em solid #69b;*/
+            /*padding-right: 1em;*/
+        /*}*/
+        /*h3 {*/
+            /*!*为标题指定clear属性来避免标题靠左*!*/
+            /*clear: left;*/
+            /*border-top: 1px solid gray;*/
+            /*text-align: center;*/
+        /*}*/
+
+        #parent-div {
+            /*设置为relative,无需为它设置任何具体变动*/
+            position: relative;
+            font: bold 200% sans-serif;
+        }
+        #forward, #back {
+            position: absolute;
+            margin: 0px;
+            top: 0px;
+            left: 0px;
+        }
+        #forward {
+            color: blue;
+        }
+        #back {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<!--<h3 id="oceans">The oceans</h3>-->
+<!--<ul>-->
+    <!--<li>Arctic</li>-->
+    <!--<li>Atlantic</li>-->
+    <!--<li>Pacific</li>-->
+    <!--<li>Indian</li>-->
+    <!--<li>Southern</li>-->
+<!--</ul>-->
+
+<!--<div id="numbered">-->
+<!--<h3>Numbered paragraphs</h3>-->
+    <!--<p>Lorem ipsum</p>-->
+    <!--<p>Dolor sit</p>-->
+    <!--<p>Amet consectetuer</p>-->
+    <!--<p>Magna aliquam</p>-->
+    <!--<p>Autem veleum</p>-->
+<!--</div>-->
+
+<div id="parent-div">
+    <p id="forward">/</p>
+    <p id="back">\</p>
+</div>
+</body>
+</html>

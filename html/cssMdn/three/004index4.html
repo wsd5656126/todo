@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        li.open {
+            list-style: circle;
+        }
+
+        li.close {
+            list-style: disc;
+        }
+
+        ol.info {
+            list-style: lower-roman;
+        }
+        h3.numbered {
+            counter-reset: mynum;
+        }
+        p.numbered:before {
+            content: counter(mynum) ": ";
+            counter-increment: mynum;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<!--任何出现在被计数元素前面的元素都可以-->
+<h3 class="numbered">Heading</h3>
+<p class="numbered">Lorem ipsum</p>
+<p class="numbered">Dolor sit</p>
+<p class="numbered">Amet consectetuer</p>
+<p class="numbered">Magna aliquam</p>
+<p class="numbered">Autem veleum</p>
+<ol class="info">
+    <li>Lorem ipsum</li>
+    <li>Dolor sit</li>
+    <li>Amet consectetuer</li>
+    <li>Magna aliquam</li>
+    <li>Autem veleum</li>
+</ol>
+<ul>
+    <li class="open">Lorem ipsum</li>
+    <li class="close">Dolor sit</li>
+    <li class="close">Amet consectetuer</li>
+    <li class="open">Magna aliquam</li>
+    <li class="close">Autem veleum</li>
+</ul>
+
+</body>
+</html>

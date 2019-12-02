@@ -1,0 +1,43 @@
+/*选择器 声明*/
+/*selector {declaration1; declaration2; ...declarationN}*/
+/*property:value 样式属性*/
+h1 {
+    color: red;
+    font-size: 14px;
+}
+
+p {
+    /*十六颜色进制*/
+    color: #ff0000;
+}
+
+p {
+    color: #f00;
+}
+
+p {
+    color: rgb(255, 0, 0);
+}
+
+p {
+    color: rgb(100%, 0%, 0%);
+}
+
+p {
+    font-family: 'sans serif';
+}
+
+p {
+    text-align: center;
+    color: black;
+    font-family: Arial;
+}
+
+body {
+    color: red;
+    background: blue;
+    /*边缘*/
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, Palatino, Serif;
+}

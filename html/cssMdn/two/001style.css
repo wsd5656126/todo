@@ -1,0 +1,73 @@
+p {
+    /*color: red;*/
+
+    /*Arial Courier New Georigia Times New Roman Trebuchet MS Verdana*/
+    /*默认字体 serif, sans-serif, monospace, cursive, fantasy*/
+    /*font-family: Arial;*/
+    /*font-family: "Trebuchet MS", Verdana, sans-serif;*/
+
+    /*color: red;*/
+    /*font-family: Helvetica, Arial, sans-serif;*/
+
+    /*字体大小*/
+    /*px:固定大小 em:相当于父元素 rem相当于html根元素,默认16*/
+    /*font-size: 10px;*/
+}
+
+html {
+    /*font-size: 12px;*/
+}
+
+h1 {
+    /*font-size: 2.6rem;*/
+}
+
+p {
+    /*font-size: 1.4rem;*/
+    /*color: red;*/
+    /*font-family: Helvetica, Arial, sans-serif;*/
+
+    /*打开关闭斜体 normal italic oblique*/
+    /*font-style: ;*/
+    /*粗体大小 normal bold*/
+    /*font-weight: ;*/
+    /*字体转换*/
+    /*text-transform: ;*/
+}
+
+/*html {*/
+/*font-size: 10px;*/
+/*}*/
+
+/*h1 {*/
+/*font-size: 2.6rem;*/
+/*text-transform: capitalize;*/
+/*}*/
+
+/*h1 + p {*/
+/*font-weight: bold;*/
+/*}*/
+
+/*p {*/
+/*font-size: 1.4rem;*/
+/*color: red;*/
+/*font-family: Helvetica, Arial, sans-serif;*/
+/*}*/
+
+/*多个阴影*/
+/*h1 {*/
+    /*text-shadow: -1px -1px 1px #aaa,*/
+    /*0px 4px 1px rgba(0, 0, 0, 0.5),*/
+    /*4px 4px 5px rgba(0, 0, 0, 0.7),*/
+    /*0px 0px 7px rgba(0, 0, 0, 0.4);*/
+/*}*/
+
+/*文本对齐*/
+/*text-align*/
+
+/*行高*/
+/*line-height*/
+
+p {
+    font: normal normal normal 16px Arial, Helvetica, sans-serif;
+}

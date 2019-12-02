@@ -1,0 +1,20 @@
+/*css颜色页面*/
+body {
+    font: 16px "Comic Sans MS", cursive;
+}
+/*段落*/
+p {
+    color: blue;
+}
+
+#first {
+    font-style: italic;
+}
+
+strong {
+    color: red;
+    background-color: #ddf;
+    font: 200% Serif;
+}
+.carrot{ color: red}
+.spinach{color: green}

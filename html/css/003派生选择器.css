@@ -1,0 +1,17 @@
+/*通过这种方式来应用规则的选择器成为派生选择器*/
+/*li strong {*/
+/*font-style: italic;*/
+/*font-weight: normal;*/
+/*}*/
+
+strong {
+    color: red;
+}
+
+h2 {
+    color: red;
+}
+
+h2 strong {
+    color: blue;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        /*p {*/
+            /*!*text-indent: 5em;*!*/
+            /*text-indent: -5em;*/
+            /*!*内边距*!*/
+            /*padding-left: 5em;*/
+        /*}*/
+        /*p {*/
+            /*text-indent: 20%;*/
+        /*}*/
+        div#outer {
+            /*width: 500px;*/
+        }
+        div#inner {
+            /*text-indent: 10%;*/
+        }
+        p {
+            /*width: 200px;*/
+            /*text-align: left;*/
+            /*text-align: center;*/
+            /*text-align: right;*/
+        }
+        p.spread {
+            /*word-spacing: 30px;*/
+        }
+        p.tight {
+            /*word-spacing: -.5em;*/
+        }
+        h1 {
+            letter-spacing: -.5em
+        }
+        h4 {
+            letter-spacing: 20px;
+        }
+        a {
+            text-decoration: none;
+            /*下划线*/
+            /*text-decoration: underline;*/
+            /*上划线*/
+            /*text-decoration: overline;*/
+            /*包围线*/
+            /*text-decoration: line-through;*/
+            /*闪烁*/
+            /*text-decoration: blink;*/
+        }
+    </style>
+</head>
+<body>
+<a>link</a>
+<h1>This is header 1</h1>
+<h4>This is header 4</h4>
+<p>This is a paragraph.</p>
+<div id="outer">
+    <div id="inner">
+        some text. some text. some text.
+        <p>this is a paragraph.</p>
+    </div>
+</div>
+<p class="spread">
+   This is a paragraph. The spaces between words will be increased.
+</p>
+<p class="tight">
+    This is a paragraph. The spaces between words will be decreased.
+</p>
+</body>
+</html>

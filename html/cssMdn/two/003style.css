@@ -1,0 +1,23 @@
+p {
+    font-size: 2rem;
+    text-align: center;
+}
+/*没有访问的*/
+a:link {
+
+}
+/*访问过的*/
+a:visited {
+
+}
+/*鼠标停留在这个链接*/
+a:hover {
+
+}
+a:focus {
+
+}
+a:active {
+
+}
+

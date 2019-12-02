@@ -1,0 +1,43 @@
+h1 {
+    color: red;
+}
+/*多个选择器*/
+p, li {
+    color: green;
+}
+/*所有浏览器默认自带样式*/
+li {
+    /*修改项目符号*/
+    list-style-type: none;
+}
+li.special {
+    color: orange;
+    font-weight: bold;
+}
+/*后代选择器*/
+li em {
+    color: rebeccapurple;
+}
+/*相邻兄弟组合器*/
+h1 + p {
+    font-size: 200%;
+}
+/*没有被访问的链接颜色为粉色*/
+a:link {
+    color: pink;
+}
+/*访问过的链接为绿色*/
+a:visited {
+    color: green;
+}
+/*鼠标悬停*/
+a:hover {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+body h1 + p.special {
+    color: yellow;
+    background-color: black;
+    padding: 5px;
+}
