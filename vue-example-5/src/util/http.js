@@ -1,7 +1,7 @@
 import Axios from 'axios'
 import QS from 'qs'
 import {Toast} from 'vant'
-import store from '@/store/index'
+// import store from '@/store/index'
 import router from 'vue-router'
 
 //环境切换
@@ -17,19 +17,19 @@ Axios.defaults.timeout = 10 * 1000;
 //post请求头
 Axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
 //请求拦截器
-Axios.interceptors.request.use(
-  config => {
-    //每次请求判断vuex是否存在token
-    //如果存在则同意在header都加上token
-    //即使本地存在token,也有可能token是过期的,所以在响应拦截器中要对返回状态进行判断
-    const token = store.state.token;
-    token && (config.headers.Authorization = token);
-    return config;
-  },
-  error => {
-    return Promise.error(error)
-  }
-);
+// Axios.interceptors.request.use(
+//   config => {
+//     //每次请求判断vuex是否存在token
+//     //如果存在则同意在header都加上token
+//     //即使本地存在token,也有可能token是过期的,所以在响应拦截器中要对返回状态进行判断
+//     const token = store.state.token;
+//     token && (config.headers.Authorization = token);
+//     return config;
+//   },
+//   error => {
+//     return Promise.error(error)
+//   }
+// )
 Axios.interceptors.response.use(
   response => {
     //如果状态码为200,请求成功

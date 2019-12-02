@@ -5,11 +5,17 @@ import All from '../components/All'
 import News from '../components/News'
 import DuanZi from '../components/DuanZi'
 import Detail from '../components/Detail'
+import ApiAddress from '../components/ApiAddress'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path: '/api',
+      name: 'ApiAddress',
+      component: ApiAddress
+    },
     {
       path: '/hw',
       name: 'HelloWorld',
