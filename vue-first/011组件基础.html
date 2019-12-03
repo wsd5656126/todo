@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        Vue.component('button-counter', {
+            data: function () {
+                return {
+                    count: 0
+                }
+            },
+            template: '<button v-on:click="count++">You clicked me {{count}} times.</button>'
+        });
+        var buttonCounter2Data = {
+            count: 0
+        };
+        Vue.component('button-counter-2', {
+            data: function () {
+                return buttonCounter2Data;
+            },
+            template: '<button v-on:click="count++">You clicked me {{count}} times.</button>'
+        });
+        Vue.component('blog-post', {
+            props: ['title'],
+            template: '<h3>{{title}}</h3>'
+        });
+        Vue.component('blog-post2', {
+            props: [
+                'id',
+                'title',
+                'content',
+                'publishedAt',
+                'comments'
+            ],
+            template: '<h3>id:{{id}},title:{{title}},' +
+                'content:{{content}},publishedAt:{{publishedAt}},' +
+                'comments:{{comments}}</h3>'
+        });
+        Vue.component('blog-post3', {
+            props: [
+                'post'
+            ],
+            template: '<h3>id:{{post.id}},title:{{post.title}},' +
+                'content:{{post.content}},publishedAt:{{post.publishedAt}},' +
+                'comments:{{post.comments}}</h3>'
+        });
+        Vue.component('blog-post4', {
+            props: ['post'],
+            template: '<div>' +
+                '<h3>{{post.title}}</h3>' +
+                '<button v-on:click="$emit(\'enlarge-text\')">Enlarge text</button>' +
+                '<div v-html="post.content"></div>' +
+                '</div>'
+        })
+        Vue.component('blog-post5', {
+            props: ['post'],
+            template: '<div>' +
+                '<h3>{{post.title}}</h3>' +
+                '<button v-on:click="$emit(\'enlarge-text\', 0.1)">Enlarge text</button>' +
+                '<div v-html="post.content"></div>' +
+                '</div>'
+        });
+        Vue.component('custom-input', {
+            props: ['value'],
+            template:
+            '<input ' +
+                'v-bind:value="value" ' +
+                'v-on:input="$emit(\'input\', $event.target.value)">'
+        });
+        Vue.component('alert-box', {
+            template:
+            '<div class="demo-alert-box">' +
+                '<strong>Error!</strong>' +
+                '<slot></slot>' +
+                '</div>'
+        })
+    </script>
+</head>
+<body>
+<div id="app">
+    <button-counter></button-counter>
+</div>
+<div id="app-2">
+    <button-counter></button-counter>
+    <button-counter></button-counter>
+    <button-counter></button-counter>
+</div>
+<div id="app-3">
+    <div>app-3<br/></div>
+    <button-counter-2></button-counter-2>
+    <button-counter-2></button-counter-2>
+    <button-counter-2></button-counter-2>
+</div>
+<div id="app-4">
+    <div>app-4<br/></div>
+    <blog-post
+            v-for="post in posts"
+            v-bind:key="post.id"
+            v-bind:title="post.title"
+    ></blog-post>
+</div>
+<div id="app-5">
+    <div class="blog-post">
+        <h3>{{title}}</h3>
+        <div v-html="content"></div>
+    </div>
+</div>
+<div id="app-6">
+    <div>app-6<br/></div>
+    <blog-post2
+            v-for="post in posts"
+            v-bind:key="post.id"
+            v-bind:title="post.title"
+            v-bind:content="post.content"
+            v-bind:publishedAt="post.publishedAt"
+            v-bind:comments="post.comments"
+    ></blog-post2>
+    <blog-post3
+            v-for="post in posts"
+            v-bind:key="post.id"
+            v-bind:post="post"
+    ></blog-post3>
+</div>
+<div id="app-7">
+    <div>app-7<br/></div>
+    <div :style="{fontSize: postFontSize+ 'em'}">
+        <blog-post4
+                v-for="post in posts"
+                v-bind:key="post.id"
+                v-bind:post="post"
+                v-on:enlarge-text="postFontSize += 0.1"
+        ></blog-post4>
+    </div>
+</div>
+<!--使用事件抛出一个值-->
+<div id="app-8">
+    <div>app-8<br/></div>
+    <div :style="{fontSize: postFontSize+ 'em'}">
+        <blog-post5
+                v-for="post in posts"
+                v-bind:key="post.id"
+                v-bind:post="post"
+                v-on:enlarge-text="postFontSize += $event"
+        ></blog-post5>
+    </div>
+</div>
+
+<div id="app-9">
+    <input v-model="searchText">
+    <!--等价于-->
+    <!--<input-->
+            <!--v-bind:value="searchText"-->
+            <!--v-on:input="searchText = $event.target.value"-->
+    <!--&gt;-->
+    <custom-input
+            v-bind:value="searchText"
+            v-on:input="searchText = $event"
+    >
+    </custom-input>
+</div>
+
+<div id="app-10">
+    <alert-box>
+        Something bad happened.
+    </alert-box>
+</div>
+
+<div id="app-11">
+    <component v-bind:is="currentTabComponent"></component>
+</div>
+<script>
+    new Vue({
+        el:'#app-10'
+    });
+    new Vue({
+        el: '#app-8',
+        data: {
+            posts: [
+                {id: 6, title: 'wusd'},
+                {id: 7, title: 'lij'}
+            ],
+            postFontSize: 1
+        }
+    });
+    new Vue({
+        el: '#app-7',
+        data: {
+            posts: [
+                {id: 4, title: 'wusd'},
+                {id: 5, title: 'lij'}
+            ],
+            postFontSize: 1
+        }
+    });
+    new Vue({
+        el: '#app-6',
+        data: {
+            posts: [
+                {
+                    // id: 1,
+                    title: "My journey with Vue",
+                    content: 'hello world',
+                    publishedAt: '100',
+                    comments: 'wusd'
+                }
+            ]
+        }
+    });
+    new Vue({
+        el: '#app-5',
+        data: {
+            title: 'titleStr',
+            content: 'content'
+        }
+    });
+    new Vue({
+        el: '#app-4',
+        data: {
+            posts: [
+                {id: 1, title: 'My journey with Vue'},
+                {id: 2, title: 'Blogging with Vue'},
+                {id: 3, title: 'Why Vue is so fun'}
+            ]
+        }
+    })
+    new Vue({
+        el: '#app-3'
+    });
+    new Vue({
+        el: '#app-2'
+    });
+    new Vue({
+        el: '#app'
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <input v-model="message" placeholder="edit me"/>
+    <p>Message is: {{message}}</p>
+    <span>Multiline message is:</span>
+    <p style="white-space: pre-line">{{message2}}</p>
+    <br/>
+    <textarea v-model="message2" placeholder="add multiple lines"></textarea>
+</div>
+<div id="app-2">
+    <input type="checkbox" v-model="checked">
+    <label for="app-2">{{checked}}</label>
+</div>
+<div id="app-3">
+    <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+    <label for="jack">Jack</label>
+    <input type="checkbox" id="john" value="John" v-model="checkedNames">
+    <label for="john">John</label>
+    <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+    <label for="mike">Mike</label>
+    <br/>
+    <span>Checked names: {{checkedNames}}</span>
+</div>
+<div id="app-4">
+    <input type="radio" id="one" value="One" v-model="picked">
+    <label for="one">One</label>
+    <br/>
+    <input type="radio" id="two" value="Two" v-model="picked">
+    <label for="two">Two</label>
+    <br/>
+    <span>Picked: {{picked}}</span>
+</div>
+<div id="app-5">
+    <select v-model="selected">
+        <option disabled value="">请选择</option>
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+    </select>
+    <span>Selected:{{selected}}</span>
+</div>
+<div id="app-6">
+    <select v-model="selected" multiple style="width: 50px">
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+    </select>
+    <br/>
+    <br/>
+    <span>Selected:{{selected2}}</span>
+    <select v-model="selected2">
+        <option v-for="option in options" v-bind:value="option.value">
+            {{option.text}}
+        </option>
+    </select>
+    <span>Selected:{{selected2}}</span>
+</div>
+
+<div id="app-7">
+    <input type="radio" v-model="picked" value="a">
+    <input type="checkbox" v-model="toggle">
+    <select v-model="selected">
+        <option value="abc">ABC</option>
+    </select>
+</div>
+<script>
+    var app7 = new Vue({
+        el:'#app-7',
+        data: {
+            picked: '',
+            toggle: '',
+            selected:''
+        }
+    })
+    var app6 = new Vue({
+        el: '#app-6',
+        data: {
+            selected: [],
+            selected2:'',
+            options: [
+                {text: 'One', value: 'A'},
+                {text: 'Two', value: 'B'},
+                {text: 'Three', value: 'C'}
+            ]
+        }
+    });
+    var app5 = new Vue({
+        el: '#app-5',
+        data: {
+            selected: ''
+        }
+    });
+    var app4 = new Vue({
+        el: '#app-4',
+        data: {
+            picked: ''
+        }
+    })
+    var app3 = new Vue({
+        el: '#app-3',
+        data: {
+            checkedNames: []
+        }
+    })
+    var app2 = new Vue({
+        el: '#app-2',
+        data: {
+            checked: false
+        }
+    })
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: '',
+            message2: ''
+        }
+    });
+</script>
+
+</body>
+</html>

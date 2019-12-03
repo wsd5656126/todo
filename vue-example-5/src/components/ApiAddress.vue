@@ -6,7 +6,7 @@
 
 <script>
   // import {apiAddress} from "../util/api";
-  import {get, post} from "../util/http";
+  import {get} from "../util/http";
 
   export default {
     name: "ApiAddress",
@@ -23,7 +23,6 @@
           type: 0,
           sort: 1
         }).then(res => {
-          console.log('test');
           console.log(res);
           self.api = res;
         })

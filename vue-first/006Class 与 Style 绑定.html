@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app" v-bind:class="{active: isActive}">app</div>
+<div
+        id="app-2"
+        class="static"
+        v-bind:class="{active:isActive, 'text-danger':hasError}"
+></div>
+<div id='app-3' v-bind:class="classObject"></div>
+<div id="app-4" v-bind:class="[activeClass,errorClass]"></div>
+<div id="app-5" v-bind:class="[isActive ? activeClass: '', errorClass]"></div>
+<my-component class="baz boo"></my-component>
+<!--实际上是JS对象-->
+<div id="app-6" v-bind:style="{color: activeColor,fontSize:fontSize + 'px'}">div6</div>
+<div id="app-7" v-bind:style="styleObject">div7</div>
+<div id="app-8" v-bind:style="[baseStyles,overridingStyles]"></div>
+<script>
+    var app7 = new Vue({
+       el:'#app-7' ,
+        data: {
+           styleObject: {
+               color: 'red',
+               fontSize: '13px'
+           }
+        }
+    });
+    var app6 = new Vue({
+        el: '#app-6',
+        data: {
+            activeColor: 'red',
+            fontSize: 30
+        }
+    });
+    //todo
+    Vue.component('my-component', {
+        template: '<p class="foo bar">Hi</p>'
+    });
+    var app4 = new Vue({
+        el: '#app-4',
+        data: {
+            activeClass: 'active',
+            errorClass: 'text-danger'
+        }
+    })
+    var app3 = new Vue({
+        el: '#app-3',
+        data: {
+            classObject: function () {
+                return {
+                    active: this.isActive && !this.error,
+                    'text-danger': this.error && this.error.type === 'fatal'
+                }
+            }
+        }
+    })
+    var app2 = new Vue({
+        el: '#app-2',
+        data: {
+            isActive: true,
+            hasError: false
+        }
+    })
+    var app = new Vue({
+        el: '#app',
+        data: {
+            isActive: true
+        }
+    });
+</script>
+
+</body>
+</html>
