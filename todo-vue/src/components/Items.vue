@@ -80,6 +80,7 @@ export default {
 <style scoped>
   .items-line {
     display: flex;
+    text-decoration: underline;
   }
 
   .items-line-left {

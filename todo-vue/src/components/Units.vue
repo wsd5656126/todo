@@ -6,12 +6,12 @@
       </div>
       <div class="units-right">
         <span>locked</span>
-        <span v-on:click="deleteItem">delete</span>
+        <i v-on:click="deleteItem">&#xe7c4;</i>
       </div>
     </div>
 
     <div class="line flex">
-      <input class="units-right" v-model="newUnit.unitName" v-on:keyup.enter="addUnit">
+      <input class="units-left" v-model="newUnit.unitName" v-on:keyup.enter="addUnit">
     </div>
     <div class="line flex" v-for="unit in units">
       <div class="units-left">
@@ -120,6 +120,6 @@ export default {
   }
 
   .units-right {
-    margin-right: auto;
+    margin-left: auto;
   }
 </style>

@@ -26,6 +26,7 @@ export default {
   body {
     margin: 0 auto;
     width: 70%;
+    background: #a8c5ff;
   }
 
 </style>
